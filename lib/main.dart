@@ -17,13 +17,20 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          surfaceTintColor: Colors.white,
+          backgroundColor: Color(0xffF5F5F5),
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 20,
+            color: Colors.black,
+            fontFamily: GoogleFonts.poppins().fontFamily,
+          ),
+        ),
         fontFamily: GoogleFonts.poppins().fontFamily,
         textTheme: GoogleFonts.poppinsTextTheme(),
         inputDecorationTheme: InputDecorationTheme(
-          helperStyle: TextStyle(
-            color: Color(0xff626365),
-            fontWeight: FontWeight.w700,
-          ),
+          helperStyle: TextStyle(color: Color(0xff626365), fontWeight: FontWeight.w700),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
             borderSide: BorderSide(color: Color(0xffF5F5F5)),

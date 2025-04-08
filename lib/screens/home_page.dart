@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xffF5F5F5),
+        automaticallyImplyLeading: false,
         title: Text("Home", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
       ),
       body: SafeArea(
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: Colors.blue, // Border color
+                              color: Color(0xff7EA4F9), // Border color
                               width: 2, // Border width
                             ),
                           ),
@@ -107,7 +108,32 @@ class _HomePageState extends State<HomePage> {
                               child: Image.asset("assets/images/image.png", fit: BoxFit.cover),
                             ),
                           ),
-                          // You can add more widgets inside the column as needed
+                          SizedBox(height: 15),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    height: 26,
+                                    width: 26,
+                                    child: Image.asset("assets/images/like.png"),
+                                  ),
+                                  SizedBox(width: 11),
+                                  SizedBox(
+                                    height: 20,
+                                    width: 20,
+                                    child: Image.asset("assets/images/share.png"),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 26,
+                                width: 26,
+                                child: Image.asset("assets/images/whatsapp.png"),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
