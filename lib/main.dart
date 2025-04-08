@@ -1,3 +1,5 @@
+import 'package:almagram/screens/calander_page.dart';
+import 'package:almagram/screens/home_page.dart';
 import 'package:almagram/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,13 +15,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         fontFamily: GoogleFonts.poppins().fontFamily,
         textTheme: GoogleFonts.poppinsTextTheme(),
         inputDecorationTheme: InputDecorationTheme(
-          helperStyle: TextStyle(color: Color(0xff626365), fontWeight: FontWeight.w700),
+          helperStyle: TextStyle(
+            color: Color(0xff626365),
+            fontWeight: FontWeight.w700,
+          ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
             borderSide: BorderSide(color: Color(0xffF5F5F5)),
@@ -33,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff4378EB)),
       ),
-      home: LoginPage(),
+      home: CalanderPage(),
     );
   }
 }
@@ -108,7 +114,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
-            Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
           ],
         ),
       ),
