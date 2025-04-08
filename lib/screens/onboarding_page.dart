@@ -1,3 +1,4 @@
+import 'package:almagram/screens/home_page.dart';
 import 'package:almagram/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
@@ -73,11 +74,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     duration: Duration(milliseconds: 250),
                     curve: Curves.easeInOut,
                   );
-                  // if (_currentPage == _onboardingData.length - 1) {
-                  //   Navigator.of(
-                  //     context,
-                  //   ).push(MaterialPageRoute(builder: (context) => LoginPage()));
-                  // }
+                  if (_currentPage == _onboardingData.length - 1) {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                  }
                 },
                 child: const Text(
                   "Next",
