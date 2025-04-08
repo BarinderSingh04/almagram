@@ -1,4 +1,3 @@
-import 'package:almagram/screens/login_page.dart';
 import 'package:almagram/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
@@ -86,6 +85,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 ),
               ),
             ),
+            const SizedBox(height: 16),
           ],
         ),
       ),
