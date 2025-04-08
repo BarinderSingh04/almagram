@@ -1,3 +1,4 @@
+import 'package:almagram/screens/bottom_nav.dart';
 import 'package:almagram/screens/login_page.dart';
 import 'package:almagram/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
@@ -17,17 +18,20 @@ class _OnboardingPageState extends State<OnboardingPage> {
     {
       'image': 'assets/images/onboarding.png',
       'title': 'Connect with Alumni',
-      'description': 'Reconnect with your college friends and build your network.',
+      'description':
+          'Reconnect with your college friends and build your network.',
     },
     {
       'image': 'assets/images/onboarding.png',
       'title': 'Find Opportunities',
-      'description': 'Discover job openings, internships, and mentorship opportunities.',
+      'description':
+          'Discover job openings, internships, and mentorship opportunities.',
     },
     {
       'image': 'assets/images/onboarding.png',
       'title': 'Stay Updated',
-      'description': 'Get the latest news and updates from your college and alumni community.',
+      'description':
+          'Get the latest news and updates from your college and alumni community.',
     },
   ];
 
@@ -63,7 +67,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(_onboardingData.length, (index) => buildIndicator(index)),
+              children: List.generate(
+                _onboardingData.length,
+                (index) => buildIndicator(index),
+              ),
             ),
             const SizedBox(height: 24),
             Padding(
@@ -74,11 +81,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     duration: Duration(milliseconds: 250),
                     curve: Curves.easeInOut,
                   );
-                  // if (_currentPage == _onboardingData.length - 1) {
-                  //   Navigator.of(
-                  //     context,
-                  //   ).push(MaterialPageRoute(builder: (context) => LoginPage()));
-                  // }
+                  if (_currentPage == _onboardingData.length - 1) {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => BottomNav()),
+                    );
+                  }
                 },
                 child: const Text(
                   "Next",
@@ -99,7 +106,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
       height: 8,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: _currentPage == index ? Theme.of(context).colorScheme.primary : Colors.grey,
+        color:
+            _currentPage == index
+                ? Theme.of(context).colorScheme.primary
+                : Colors.grey,
       ),
     );
   }
@@ -126,7 +136,10 @@ class OnboardingItem extends StatelessWidget {
         const SizedBox(height: 48),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+          child: Text(
+            title,
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
         ),
         const SizedBox(height: 12),
         Padding(
